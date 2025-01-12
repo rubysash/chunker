@@ -2,8 +2,9 @@
 
 ## What it Does
 - Converts large file (any type) into json (hex) files
+- Adds reassembled_ as a prefix to the rebuilt file
 - Reassembles all with checksum integrity checking
-- The json output is larger than the binary input, but compresses better than binary alone would most of the time
+- JSON output is larger than the binary input, but compresses better than binary alone would most of the time
 
 ## Use Case
 I was trying to send a pdf that was larger than email allowed and email was only way to get the pdf to it's destination.
@@ -11,15 +12,17 @@ I was trying to send a pdf that was larger than email allowed and email was only
 In chunks, I could send it a chunk at a time and stay under the email limit.
 
 
-## to chunk into 3 MB at a time
-python chunker.py chunk somefile.pdf 3
+## Syntax
+### Chunk 3 MB at a time into JSON
 
-## To rebuild all chunks
-python chunker.py reassemble somefile.pdf_metadata.json
+`python chunker.py chunk somefile.pdf 3`
+
+### Rebuild all JSON chunks
+`python chunker.py reassemble somefile.pdf_metadata.json`
 
 ## How it works
-The somefile.pdf_metadata.json file it makes contains checksums on each json, 
-and the original checksum so it can verify the rebuild:
+
+The somefile.pdf_metadata.json file it makes contains checksums on each json and the original checksum so it can verify the rebuild:
 
 ### Example Metadata
 ```json
