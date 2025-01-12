@@ -17,6 +17,7 @@ The somefile.pdf_metadata.json file it makes contains checksums on each json,
 and the original checksum so it can verify the rebuild:
 
 ### Example Metadata
+```json
 {
     "file_name": "CIS_Red_Hat_Enterprise_Linux_9_Benchmark_v2.0.0.pdf",
     "file_checksum": "b5bc38c11fad01c269af7367facee155",
@@ -41,10 +42,11 @@ and the original checksum so it can verify the rebuild:
         }
     ]
 }
-
+```
 ### Example Json Chunk
 The "chunks" are hex representations of binary data:
 
+```json
 {
     "file_name": "CIS_Red_Hat_Enterprise_Linux_9_Benchmark_v2.0.0.pdf",
     "chunk_number": 1,
@@ -52,7 +54,7 @@ The "chunks" are hex representations of binary data:
     "chunk_checksum": "8b438280fe32fd9df1e212280be081d6",
     "chunk_data": "255044462d312....2f5469"
 }
-
+```
 '''
 import os
 import hashlib
